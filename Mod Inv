@@ -1,0 +1,16 @@
+ll mod_inv(ll a)
+{
+    a %= MOD2;
+    if (a < 0)
+        a += MOD2;
+    ll res = 1;
+    ll e = MOD2 - 2;
+    while (e)
+    {
+        if (e & 1)
+            res = (res * a) % MOD2;
+        a = (a * a) % MOD2;
+        e >>= 1;
+    }
+    return res;
+}
